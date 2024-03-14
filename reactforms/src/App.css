@@ -1,0 +1,209 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-nav-div{
+    background-color:#0f0e13;
+    background-image: 
+      radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+      radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), 
+      radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 15px 30px;
+    font-size: larger;
+    position:fixed;
+    width: 100%;
+    z-index: 1;
+    box-shadow: 0 2px 2px rgba(255, 255, 255, 0.2);
+}
+
+.main-nav-div ul{
+    list-style: none;
+    margin-right: 150px;
+
+}
+
+.main-nav-div ul li{
+    display: inline;
+    margin-left: 80px;
+}
+
+.nav-logo{
+    width: 180px;
+}
+
+.eth-card {
+    background-color:#a099ff;
+    background-image: 
+      radial-gradient(at 83% 67%, rgb(152, 231, 156) 0, transparent 58%), 
+      radial-gradient(at 67% 20%, hsla(357,94%,71%,1) 0, transparent 59%), 
+      radial-gradient(at 88% 35%, hsla(222,81%,65%,1) 0, transparent 50%), 
+      radial-gradient(at 31% 91%, hsla(9,61%,61%,1) 0, transparent 52%), 
+      radial-gradient(at 27% 71%, hsla(336,91%,65%,1) 0, transparent 49%), 
+      radial-gradient(at 74% 89%, hsla(30,98%,65%,1) 0, transparent 51%), 
+      radial-gradient(at 53% 75%, hsla(174,94%,68%,1) 0, transparent 45%);
+
+      width:380px;
+      height: 200px;
+      border-radius: 5px;
+      padding: 10px 20px;
+      color: white;
+  }
+
+  .eth-card p{
+    font-size: large;
+    margin-bottom: 5px;
+
+  }
+  .maincontent-div{
+    background-color:#0f0e13;
+  background-image: 
+    radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+    radial-gradient(at 50% 100%, hsla(225,39%,25%,1) 0, transparent 50%);
+    
+  }
+
+  .main-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    height:80vh;
+  }
+
+  .form-div{
+    background: rgb(39, 51, 89, 0.4);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    width:400px;
+    height: 300px;
+    padding: 20px 40px;
+  }
+
+  .form{
+    background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+    display: block;
+    width: 100%;
+    height: 30px;
+    border-radius: 20px;
+    padding: 5px 10px;
+    border: none;
+    margin-top: 10px;
+  }
+
+  .submit-btn{
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width:100%;
+    color: white;
+    height: 30px;
+    border: 2px solid white;
+    margin-top: 10px;
+
+  }
+
+  .cw-btn{
+    background-color: blue;
+    border-radius: 10px;
+    width: 150px;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin-right: auto;
+    margin-left: 120px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+
+  .eth-logo{
+    width: 40px;
+    border-radius: 20%;
+    margin-bottom: 50px;
+    border: 2px solid white;
+  }
+
+  .it-div{
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+ flex-direction: row;
+ flex-wrap: wrap;
+ width:80%;
+   color: white;
+gap:20px;
+margin-left: auto;
+margin-right: auto;
+
+
+
+  }
+
+  .itc-div{
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    line-height: 40px;
+    margin-bottom: 20px;
+  }
+
+  .itc-div a{
+    text-decoration: none;
+    border: none;
+    color: white;
+  }
+
+
+  .tx{
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+
+  
+  .loading-animation {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
+  }
+  
+  .loading-circle {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ccc;
+    border-top-color: #333;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  .loading-text {
+    margin-top: 10px;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
