@@ -1,37 +1,34 @@
-// SPDX-License-Identifier: UNLICENSED
+//SPDX-License-Identifier: UNLICENSED
 
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.9;
 
-import "hardhat/console.sol";
-
-contract Transactions {
-    uint256 transactionCount;
-
-    event Transfer(address from, address receiver, uint amount, string message, uint256 timestamp, string keyword);
-  
-    struct TransferStruct {
+contract Transactions{
+    struct TransactStruct{
         address sender;
-        address receiver;
-        uint amount;
-        string message;
+        address reciver;
+        uint256 amount;
         uint256 timestamp;
         string keyword;
+        string message;
     }
 
-    TransferStruct[] transactions;
+    mapping(address => TransactStruct[])  transactions;
+    mapping(address => uint256)  transactionCount;
 
-    function addToBlockchain(address payable receiver, uint amount, string memory message, string memory keyword) public {
-        transactionCount += 1;
-        transactions.push(TransferStruct(msg.sender, receiver, amount, message, block.timestamp, keyword));
+    event transfer(address sender, address reciver, uint256 amount, uint256 timestamp, string keyword, string message);
 
-        emit Transfer(msg.sender, receiver, amount, message, block.timestamp, keyword);
+    function addToBlockchain(address _reciver, uint256 _amount, string memory _keyword, string memory _message) public{
+        transactions[msg.sender].push(TransactStruct(msg.sender, _reciver, _amount, block.timestamp, _keyword, _message));
+        emit transfer(msg.sender, _reciver, _amount, block.timestamp, _keyword, _message);
+        transactionCount[msg.sender]+=1;
     }
 
-    function getAllTransactions() public view returns (TransferStruct[] memory) {
-        return transactions;
+    function getTransactions(address _owner) public view returns(TransactStruct[] memory){
+        return transactions[_owner];
     }
 
-    function getTransactionCount() public view returns (uint256) {
-        return transactionCount;
+    function getTransactionCount(address _owner) public view returns(uint256){
+        return transactionCount[_owner];
     }
 }
+

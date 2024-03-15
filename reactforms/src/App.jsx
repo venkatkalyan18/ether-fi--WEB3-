@@ -10,7 +10,7 @@ import Loading from './Loading'
 function App() {
 
 
-  const {connectWallet, formData,currentAccount,sendTransaction,handleOnchange,isLoading} = React.useContext(TransactionContext);
+  const {connectWallet,transactionCount, formData,currentAccount,sendTransaction,handleOnchange,isLoading} = React.useContext(TransactionContext);
 
 
   const saveChanges = () =>{
@@ -30,9 +30,8 @@ function App() {
           <p>{currentAccount?`Wallet Address: ${currentAccount.slice(0,5)}....${currentAccount.slice(36)}`:`Wallet Address`}</p>
           <h2>Ethereum</h2>
 </div>
-{
-  !currentAccount ? <button onClick={connectWallet} className='cw-btn'>Connect Wallet</button>:<p></p>
-}
+<button className='cw-btn' onClick={connectWallet}>{currentAccount?`Disconnect Wallet`:`Connect Wallet`}</button>
+
 
         </div>
       
