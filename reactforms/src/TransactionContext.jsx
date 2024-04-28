@@ -42,7 +42,6 @@ export const TransactionProvider = ({children}) =>{
             const account = accounts[0];
     
             const availableTransactions = await transactionsContract.getTransactions(account);
-            console.log(availableTransactions);
     
             const structuredTransactions = availableTransactions.map((transaction) => ({
               addressTo: transaction.reciver,
@@ -53,7 +52,6 @@ export const TransactionProvider = ({children}) =>{
               amount: parseInt(transaction.amount._hex) / (10 ** 18)
             }));
     
-            console.log(structuredTransactions);
     
             setTransactions(structuredTransactions);
           } else {
@@ -102,7 +100,7 @@ export const TransactionProvider = ({children}) =>{
             setAft(accounts[0]);
             const transactionsContract = getEthereumContract();
             const currentTransactionCount = await transactionsContract.getTransactionCount(currentAccount);
-    
+            setTransactionCount(currentTransactionCount.toNumber());
             window.localStorage.setItem("transactionCount", currentTransactionCount);
           }
         } catch (error) {
@@ -145,8 +143,7 @@ export const TransactionProvider = ({children}) =>{
             setIsLoading(false);
             console.log(`success--${transactionHash.hash}`);
             window.location.reload();
-            const transactionCount = await transactionContract.getTransactionCount();
-            setTransactionCount(transactionCount.toNumber());
+          
            
 
 

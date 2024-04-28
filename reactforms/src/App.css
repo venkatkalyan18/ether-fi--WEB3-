@@ -4,6 +4,27 @@
     box-sizing: border-box;
 }
 
+
+::-webkit-scrollbar{
+  width:10px;
+}
+
+::-webkit-scrollbar-track{
+  background-color:#0f0e13;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color:#0f0e13;
+  background-image: 
+    radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+    radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), 
+    radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%);
+    border-radius: 10px;
+}
+
+html{
+  scroll-behavior: smooth;
+}
 .main-nav-div{
     background-color:#0f0e13;
     background-image: 
@@ -16,7 +37,7 @@
     color: white;
     padding: 15px 30px;
     font-size: larger;
-    position:fixed;
+
     width: 100%;
     z-index: 1;
     box-shadow: 0 2px 2px rgba(255, 255, 255, 0.2);
@@ -31,6 +52,8 @@
 .main-nav-div ul li{
     display: inline;
     margin-left: 80px;
+
+    cursor: pointer;
 }
 
 .nav-logo{
@@ -65,11 +88,13 @@
   background-image: 
     radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
     radial-gradient(at 50% 100%, hsla(225,39%,25%,1) 0, transparent 50%);
+    flex-wrap: wrap;
     
   }
 
   .main-div{
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
     width: 80%;
@@ -117,6 +142,7 @@
     height: 30px;
     border: 2px solid white;
     margin-top: 10px;
+    cursor: pointer;
 
   }
 
@@ -131,8 +157,10 @@
     margin-left: 120px;
     margin-top: 10px;
     cursor: pointer;
+
   }
-  
+
+
 
   .eth-logo{
     width: 40px;
